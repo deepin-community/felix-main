@@ -1,0 +1,5 @@
+/etc/felix-framework/
+/usr/share/felix-framework/bin/
+/usr/share/felix-framework/bundle/
+/usr/share/felix-framework/conf/
+/var/cache/felix-framework/

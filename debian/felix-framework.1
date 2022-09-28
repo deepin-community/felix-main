@@ -1,0 +1,38 @@
+.TH FELIX "1" "November 2011" "Felix" "User Commands"
+.SH NAME
+felix-framework - command line Felix OSGi Framework launcher
+.SH SYNOPSIS
+.B felix-framework [-b \fI<bundle-deploy-dir>\fR] [\fI<bundle-cache-dir>\fR]
+.SH DESCRIPTION
+.B felix-framework
+provide a way to start Apache Felix OSGi Framework from command line.
+After startup, it provide some simple commands to help management of OSGi bundle.
+.SH OPTIONS
+.IP "-b bundle-deploy-dir"
+The Felix launcher deploys all bundles in the auto-deploy directory into the
+framework instance during startup. By default, the auto-deploy directory is
+.I /usr/share/felix-framework/bundle/
+.
+Specifying an auto-deploy directory replaces the default directory,
+it does not augment it.
+.IP "bundle-cache-dir"
+path you want to use as the bundle cache. If you specify a relative cache path,
+then it will be treated as relative to
+.I ~/.felix/
+.
+By default, felix-framework will use
+.I ~/.felix/felix-cache/
+.SH FILES
+.I /etc/felix-framework/config.properties
+.RS
+The system wide configuration file for Felix Framework. See
+<URL:http://felix.apache.org/site/apache-felix-framework-configuration-properties.html>
+for further details.
+.SH FILES
+.I ~/.felix/
+.RS
+Default user cache directory for OSGi bundle information.
+.SH AUTHOR
+Damien Raude-Morvan <drazzib@debian.org>
+.SH "SEE ALSO"
+<URL:http://felix.apache.org/site/apache-felix-framework-usage-documentation.html>

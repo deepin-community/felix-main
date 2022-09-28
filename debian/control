@@ -1,0 +1,76 @@
+Source: felix-main
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Yulia Novozhilova <Yulia.Novozhilova@sun.com>,
+ Damien Raude-Morvan <drazzib@debian.org>
+Build-Depends:
+ ant,
+ debhelper (>= 10),
+ default-jdk,
+ libfelix-bundlerepository-java (>= 2.0.8~),
+ libfelix-framework-java,
+ libfelix-gogo-command-java (>= 0.14.0~),
+ libfelix-gogo-command-java-doc,
+ libfelix-gogo-runtime-java (>= 0.14.0~),
+ libfelix-gogo-runtime-java-doc,
+ libfelix-gogo-shell-java,
+ libfelix-gogo-shell-java-doc,
+ libfelix-shell-java,
+ libfelix-shell-tui-java,
+ libmaven-antrun-plugin-java,
+ libmaven-bundle-plugin-java,
+ libmaven-dependency-plugin-java,
+ libmaven-javadoc-plugin-java,
+ libmaven-source-plugin-java,
+ maven-debian-helper (>= 1.4)
+Standards-Version: 4.0.0
+Vcs-Git: https://anonscm.debian.org/git/pkg-java/felix-main.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-java/felix-main.git
+Homepage: http://felix.apache.org/site/
+
+Package: libfelix-main-java
+Architecture: all
+Depends:
+ ${maven:Depends},
+ ${misc:Depends}
+Recommends:
+ ${maven:OptionalDepends}
+Suggests:
+ libfelix-main-java-doc
+Description: Libraries to instantiate and execute the Felix Framework
+ The Felix Framework subproject is an implementation
+ of the OSGi R4.2 core framework specification.
+
+Package: libfelix-main-java-doc
+Architecture: all
+Section: doc
+Depends:
+ ${maven:DocDepends},
+ ${misc:Depends}
+Recommends:
+ ${maven:DocOptionalDepends}
+Description: Libraries to instantiate and execute OSGi Felix Framework - doc
+ The Felix Framework subproject is an implementation
+ of the OSGi R4.2 core framework specification.
+ .
+ This package contains Javadoc API documentation.
+
+Package: felix-main
+Architecture: all
+Depends:
+ java-wrappers,
+ libfelix-bundlerepository-java,
+ libfelix-gogo-command-java,
+ libfelix-gogo-runtime-java,
+ libfelix-gogo-shell-java,
+ libfelix-main-java (= ${source:Version}),
+ ${misc:Depends}
+Suggests:
+ libfelix-main-java-doc
+Description: Execution environment for OSGi Felix Framework
+ The Felix Framework subproject is an implementation
+ of the OSGi R4.2 core framework specification.
+ .
+ This package contains bootstrap tools to run Felix Framework.

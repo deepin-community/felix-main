@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+
+	install -m 755 -D debian/felix-framework.sh debian/felix-main/usr/bin/felix-framework
+
+get-orig-source:
+	uscan --no-symlink --download-current-version --force-download

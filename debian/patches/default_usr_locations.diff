@@ -1,0 +1,28 @@
+Description: Set some default values inside config.properties for
+ system wide installation.
+Author: Damien Raude-Morvan <drazzib@debian.org>
+Last-Update: 2011-11-07
+Forwarded: not-needed
+
+Index: b/src/main/resources/config.properties
+===================================================================
+--- a/src/main/resources/config.properties
++++ b/src/main/resources/config.properties
+@@ -46,7 +46,7 @@
+ # location into an absolute one by specifying the root to prepend to
+ # the relative cache path. The default for this property is the
+ # current working directory.
+-#felix.cache.rootdir=${dollar}{user.dir}
++felix.cache.rootdir=${dollar}{user.home}/.felix
+ 
+ # The following property controls whether the bundle cache is flushed
+ # the first time the framework is initialized. Possible values are
+@@ -71,7 +71,7 @@
+ 
+ # The following property specifies the directory to use as the bundle
+ # auto-deploy directory; the default is 'bundle' in the working directory.
+-#felix.auto.deploy.dir=bundle
++felix.auto.deploy.dir=/usr/share/felix-framework/bundle/
+ 
+ # The following property is a space-delimited list of bundle URLs
+ # to install when the framework starts. The ending numerical component

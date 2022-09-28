@@ -1,0 +1,174 @@
+felix-main (5.0.0-5) unstable; urgency=medium
+
+  * Team upload.
+  * Fixed the build failure cause by the update of felix-bundlerepository
+    (Closes: #866858)
+  * Build with the DH sequencer instead of CDBS
+  * Standards-Version updated to 4.0.0
+  * Switch to debhelper level 10
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 03 Jul 2017 00:08:45 +0200
+
+felix-main (5.0.0-4) unstable; urgency=medium
+
+  * Team upload.
+  * maven.properties: Update obr.version to 2.0.8.
+    Thanks to Chris Lamb for the report. (Closes: #822942)
+  * Tighten build-dependency on libfelix-bundlerepository-java.
+  * Declare compliance with Debian Policy 3.9.8.
+  * Vcs-Git: Use https.
+
+ -- Markus Koschany <apo@debian.org>  Fri, 29 Apr 2016 14:37:59 +0200
+
+felix-main (5.0.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * maven.properties: Update gogo-shell version.
+    This should really be fixed in maven.rules but does not seem to work.
+
+ -- Markus Koschany <apo@debian.org>  Sat, 21 Nov 2015 19:28:07 +0100
+
+felix-main (5.0.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Vcs-Browser: Switch to https.
+  * maven.properties: Set obr.version to 2.0.6 and fix FTBFS with latest
+    felix-bundlerepository release.
+  * Set source encoding to UTF-8 on all platforms.
+  * Update README.source. Mention to update the version requirements of
+    felix-gogo-runtime and felix-bundlerepository in maven.properties.
+
+ -- Markus Koschany <apo@gambaru.de>  Fri, 16 Oct 2015 14:34:49 +0200
+
+felix-main (5.0.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * Imported Upstream version 5.0.0.
+  * Change versioned b-d of libfelix-bundlerepository-java to 2.0.4~.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 04 May 2015 13:37:03 +0200
+
+felix-main (4.6.1-1) unstable; urgency=medium
+
+  [ Markus Koschany ]
+  * Team upload.
+  * Imported Upstream version 4.6.1.
+  * maven.properties: Change felix-gogo-runtime version to 0.16.2.
+
+  [ Miguel Landaeta ]
+  * Upload to unstable.
+
+ -- Miguel Landaeta <nomadium@debian.org>  Fri, 01 May 2015 12:51:23 -0300
+
+felix-main (4.6.0-1) experimental; urgency=medium
+
+  [ Markus Koschany ]
+  * Team upload.
+  * Imported Upstream version 4.6.0.
+  * Declare compliance with Debian Policy 3.9.6.
+  * Use shorter Vcs-Browser URL.
+  * Add libmaven-source-plugin-java to Build-Depends.
+  * wrap-and-sort -sa.
+  * Drop libfelix-main-java-doc.docs to avoid duplicate documentation files.
+    The documentation is build from source anyway.
+
+  [ Miguel Landaeta ]
+  * Add missing versioned B-D on:
+    - libfelix-bundlerepository-java
+    - libfelix-gogo-runtime-java
+    - libfelix-gogo-command-java
+  * Fix clean target to allow twice in a row builds.
+
+ -- Miguel Landaeta <nomadium@debian.org>  Fri, 20 Feb 2015 17:48:39 -0300
+
+felix-main (4.4.0-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Damien Raude-Morvan ]
+  * d/control: Fix typo in synopsis, for real this time (Closes: #648335).
+
+  [ Emmanuel Bourg ]
+  * Switch to debhelper level 9
+  * Use XZ compression for the upstream tarball
+  * debian/watch: Changed the URL to find all versions
+  * debian/control:
+    - Added the missing dependency on java-wrappers to the felix-main binary
+      package (Closes: #698998)
+    - Removed Andres Mejia from the uploaders (Closes: #743546)
+    - Standards-Version updated to 3.9.5 (no changes)
+    - Use canonical URLs for the Vcs-* fields
+
+  [ Markus Koschany ]
+  * Imported upstream version 4.4.0.
+    - Fixes FTBFS error. (Closes: #746113)
+  * Update installation path of config.properties in felix-main.install.
+  * Fix symlink to config.properties in felix-main.links.
+  * Update debian/copyright to copyright format 1.0.
+
+ -- Markus Koschany <apo@gambaru.de>  Sat, 12 Jul 2014 21:28:19 +0200
+
+felix-main (4.0.1-2) unstable; urgency=low
+
+  * d/control: Replace deprecated ${Source-Version} by ${source:Version}.
+  * d/control: Fix "Fix typo in synopsis" (Closes: #648335).
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Mon, 14 Nov 2011 23:17:39 +0100
+
+felix-main (4.0.1-1) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * Update to my @debian.org email.
+
+  [ Damien Raude-Morvan ]
+  * New upstream release.
+  * d/watch: fix for upstream tarball new name.
+  * d/patches/default_version.diff: Drop, not needed anymore.
+  * Add Depends on libfelix-gogo-runtime-java, libfelix-gogo-shell-java
+    and libfelix-gogo-command-java.
+  * New felix-main package:
+    - d/control: Depends on libfelix-gogo-*-java.
+    - d/felix-main.*: Install and links to /usr/share/felix-main/.
+    - d/felix-framework.*: Install a 'felix-framework' cli tool to start felix.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Wed, 09 Nov 2011 23:55:10 +0100
+
+felix-main (2.0.5-2) unstable; urgency=low
+
+  * Bump Standards-Version to 3.9.2: no changes needed.
+  * Use Maven build-system, as upstream:
+    - d/{build.xml,MANIFEST.MF, default.properties, *.install, *.links}: Drop.
+    - d/control: Switch from debhelper to cdbs, add Build-Depends
+      on some Maven plugins.
+    - d/maven.rules,d/maven.ignoreRules: Add handling of pom.xml replace rules.
+    - d/rules: Everything is handled by maven.mk.
+    - d/README.source,d/patches/bootstrap.diff: Add a way to bootstrap without
+      maven-bundle-plugin.
+  * Install Javadoc API to /usr/share/doc/libfelix-framework-java/api/.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Sat, 14 May 2011 19:23:02 +0200
+
+felix-main (2.0.5-1) unstable; urgency=low
+
+  [ Andres Mejia ]
+  * Upload for Debian. (Closes: #610922)
+  * Add Debian Java team as maintainer, Yulia and myself as Uploaders.
+  * Bump to Standards-Version 3.9.1.
+  * Convert to pure dh with javahelper.
+  * Add VCS entries in debian/control.
+
+  [ Damien Raude-Morvan ]
+  * Add myself as Uploaders.
+  * d/control: Drop Depends: ${shlib:Depends} as useless for Java package.
+  * d/control: Drop Depends: default-jre-headless | java2-runtime-headless
+    as a Java library don't need to depends on runtime (Java Policy).
+  * d/control, d/rules: Use mh_clean and B-D on maven-repo-helper (>= 1.1)
+  * d/copyright: Update to DEP-5 r166 format.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Wed, 26 Jan 2011 20:25:24 +0100
+
+felix-main (2.0.5-0ubuntu1) maverick; urgency=low
+
+  * Initial release. (LP: #614395)
+
+ -- Yulia Novozhilova <Yulia.Novozhilova@sun.com>  Tue, 20 Jul 2010 15:49:04 +0400

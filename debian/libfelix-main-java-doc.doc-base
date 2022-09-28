@@ -1,0 +1,8 @@
+Document: felix-main
+Title: Apache Felix Main
+Author: The Apache Software Foundation Main Classes
+Section: Programming/Java
+
+Format: HTML
+Index: /usr/share/doc/libfelix-main-java/api/index.html
+Files: /usr/share/doc/libfelix-main-java/api/*.html

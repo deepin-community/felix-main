@@ -1,0 +1,10 @@
+/usr/share/java/org.apache.felix.main.jar /usr/share/felix-framework/bin/felix.jar
+
+/usr/share/java/org.apache.felix.gogo.command.jar /usr/share/felix-framework/bundle/org.apache.felix.gogo.command.jar
+/usr/share/java/org.apache.felix.gogo.runtime.jar /usr/share/felix-framework/bundle/org.apache.felix.gogo.runtime.jar
+/usr/share/java/org.apache.felix.gogo.shell.jar /usr/share/felix-framework/bundle/org.apache.felix.gogo.shell.jar
+/usr/share/java/org.apache.felix.bundlerepository.jar /usr/share/felix-framework/bundle/org.apache.felix.bundlerepository.jar
+
+/etc/felix-framework/config.properties /usr/share/felix-framework/conf/config.properties
+
+/var/cache/felix-framework /usr/share/felix-framework/felix-cache

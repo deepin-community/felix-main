@@ -1,0 +1,4 @@
+# Only for bootstrapping
+#bootstrap_packaging_jar.diff
+#default_version.diff
+default_usr_locations.diff
